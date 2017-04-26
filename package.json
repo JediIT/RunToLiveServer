@@ -1,0 +1,30 @@
+{
+  "name": "runtoliveserver",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://stalko@github.com/JediIT/RunToLiveServer.git"
+  },
+  "author": "JediIT Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JediIT/RunToLiveServer/issues"
+  },
+  "homepage": "https://github.com/JediIT/RunToLiveServer#readme",
+  "dependencies": {
+    "async": "^2.3.0",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "nodemailer": "^4.0.1",
+    "pg": "^6.1.5",
+    "randomstring": "^1.1.5",
+    "sha1": "^1.1.1"
+  }
+}
