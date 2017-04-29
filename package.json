@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/JediIT/RunToLiveServer#readme",
   "dependencies": {
+    "minimist": "*",
     "async": "^2.3.0",
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
@@ -25,6 +26,7 @@
     "nodemailer": "^4.0.1",
     "pg": "^6.1.5",
     "randomstring": "^1.1.5",
-    "sha1": "^1.1.1"
+    "sha1": "^1.1.1",
+    "swagger-node-express": "^2.1.3"
   }
 }
