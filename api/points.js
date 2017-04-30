@@ -28,13 +28,11 @@ router.post('/test',function(req,res){
     var query = pool.query('SELECT * FROM public."Emergency";',  function (err, result) {
     if(err) {
       console.log(err);
-      pool.end();
       return;
     }
     console.log(result.rows);
 
     res.json(result.rows);
-    pool.end();
     res.status(200);
     res.end();
   });
@@ -44,13 +42,11 @@ router.post('/ping',function(req,res){
     var query = pool.query('SELECT id, ST_AsText(location), type_id FROM public."Events" e WHERE ST_DWithin(e."location", ST_SetSRID(ST_MakePoint('+req.body.lat+','+req.body.lon+'), 4326),'+req.body.radius+') ORDER BY ST_Distance(e."location", ST_SetSRID(ST_Point('+req.body.lat+','+req.body.lon+'),4326));',  function (err, result) {
     if(err) {
       console.log(err);
-      pool.end();
       return;
     }
     console.log(result.rows);
 
     res.json(result.rows);
-    pool.end();
     res.status(200);
     res.end();
   });
@@ -60,13 +56,11 @@ router.post('/add',function(req,res){
     var query = pool.query('INSERT INTO public."Events"(user_id, type_id, location, radius) VALUES ('+req.body.userId+', '+req.body.typeId+', ST_SetSRID(ST_MakePoint('+req.body.lat+','+req.body.lon+'), 4326), '+req.body.radius+');',  function (err, result) {
     if(err) {
       console.log(err);
-      pool.end();
       return;
     }
     console.log(result.rows);
 
     res.json(result.rows);
-    pool.end();
     res.status(200);
     res.end();
   });
