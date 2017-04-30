@@ -12,6 +12,7 @@ var Pool = require('pg').Pool;
 //   idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
 // });
 
+
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({
   extended: true
@@ -44,12 +45,13 @@ router.post('/ping',function(req,res){
       return;
     }
     console.log(result.rows);
+    res.json(result.rows);
     var deleteQuery = pool.query('DELETE FROM public."Events"', function (err, result) {
       if(err) {
         console.log(err);
         return;
       }
-      res.json(result.rows);
+      console.log(res);
       res.status(200);
       res.end();
     });
