@@ -51,7 +51,6 @@ router.post('/ping',function(req,res){
         console.log(err);
         return;
       }
-      console.log(res);
       res.status(200);
       res.end();
     });
