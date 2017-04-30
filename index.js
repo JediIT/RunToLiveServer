@@ -5,9 +5,12 @@ var http = require('http');
 var fs = require('fs');
 var app = express();
 var points = require('./api/points');
+var cors = require('cors');
 
 var app = express();
 app.use('/', express.static('www'));
+app.options('*', cors()) // include before other routes 
+app.use(cors());
 app.use('/api/points', points);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
